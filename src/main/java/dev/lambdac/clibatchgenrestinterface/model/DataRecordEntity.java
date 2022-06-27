@@ -21,4 +21,8 @@ public class DataRecordEntity {
     @Column(name = "amount")
     private long amount;
 
+    @Override
+    public String toString() {
+        return String.join(",", String.valueOf(id), address, assetId, assetName, String.valueOf(amount));
+    }
 }
