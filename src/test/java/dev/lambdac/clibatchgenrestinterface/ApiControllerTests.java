@@ -43,7 +43,6 @@ public class ApiControllerTests extends BaseTest {
                         get("/api/cli-batch-tx/get-data-file")
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .accept(MediaType.APPLICATION_JSON)
-                                .param("queryString", "blah")
                                 .param("pageNo", "0")
                                 .param("pageSize", "100"))
                 .andDo(print())

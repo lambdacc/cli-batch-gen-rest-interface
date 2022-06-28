@@ -34,9 +34,8 @@ public class ApiController {
 
     @GetMapping("/get-data-file")
     public ResponseEntity<Map<String, String>> getDataFile(
-            @RequestParam(required = false, defaultValue = "") String queryString,
-            @RequestParam Integer pageNo,
-            @RequestParam Integer pageSize
+            @RequestParam(required = false, defaultValue = "0") Integer pageNo,
+            @RequestParam(required = false, defaultValue = "100") Integer pageSize
     ) throws IOException {
         Pageable paging = PageRequest.of(pageNo, pageSize);
         List<DataRecordEntity> records = repository.findAll(paging).getContent();
