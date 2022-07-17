@@ -58,4 +58,15 @@ public class ApiController {
     }
 
 
+    @GetMapping("/get-data")
+    public ResponseEntity<List<DataRecordEntity>> getData(
+            @RequestParam(required = false, defaultValue = "0") Integer pageNo,
+            @RequestParam(required = false, defaultValue = "100") Integer pageSize
+    ) {
+        Pageable paging = PageRequest.of(pageNo, pageSize);
+        List<DataRecordEntity> records = repository.findAll(paging).getContent();
+        return ok(records);
+    }
+
+
 }

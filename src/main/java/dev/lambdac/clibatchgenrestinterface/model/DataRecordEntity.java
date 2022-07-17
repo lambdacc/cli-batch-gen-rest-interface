@@ -1,9 +1,14 @@
 package dev.lambdac.clibatchgenrestinterface.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "data_record")
+@Getter
+@Setter
 public class DataRecordEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
